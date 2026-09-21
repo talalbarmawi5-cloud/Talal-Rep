@@ -1,6 +1,32 @@
-﻿List<int> list = new List<int>{2,3,4,4,5};
-var res = list.Where(x=> x>2);
-foreach(var item in res)
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+
+
+
+
+List<Student> list = new List<Student>
 {
-    Console.WriteLine(item);
+    
+    new Student{name="Seren" , age=33},
+    new Student{name="narine" , age=30}
+};
+var res = list.GroupBy(x=> x.age);
+
+foreach(var group in res)
+{
+    Console.WriteLine(group.Key);
+}
+
+
+
+
+
+
+public class Student
+{
+    public int age;
+    public string name;
 }
